@@ -39,7 +39,7 @@ const ChartCard = () => {
           <div key={index} style={{width: '100%', margin: '0 10px 20px'}}>
             <div style={chartStyle(item.value)}>
               <h3>{item.subtitle}</h3>
-              <p>{item.value}%</p>
+              <p>{item.value}</p>
             </div>
           </div>
         ))}
