@@ -4,15 +4,13 @@ import { Card } from 'antd';
 
 
 const data = [
-  { value: -10, subtitle: 'Подзаголовок 1' },
-  { value: 20, subtitle: 'Подзаголовок 2' },
-  { value: 5, subtitle: 'Подзаголовок 3' },
-  { value: 15, subtitle: 'Подзаголовок 4' },
-  { value: -5, subtitle: 'Подзаголовок 5' },
-  { value: 8, subtitle: 'Подзаголовок 6' },
-  { value: 0, subtitle: 'Подзаголовок 7' },
-  { value: -3, subtitle: 'Подзаголовок 8' },
-  { value: 7, subtitle: 'Подзаголовок 9' },
+  { value: 67, subtitle: 'ΔT-1' },
+  { value: -28, subtitle: 'ΔT-7' },
+  { value: 115, subtitle: 'ΔT-1' },
+  { value: 25, subtitle: 'ΔT-7' },
+  { value: 75, subtitle: 'ΔT-1' },
+  { value: -1, subtitle: 'ΔT-7' },
+  
 ];
 
 const color = (value) => {
@@ -29,19 +27,22 @@ const chartStyle = (value) => {
     borderRadius: '5px',
     padding: '10px',
     height: '100%',
-    maxWidth: '250px', // добавляем максимальную ширину для карточки
+    maxWidth: '300px', // добавляем максимальную ширину для карточки
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center', 
   };
 };
 
 const ChartCard = () => {
   return (
-    <Card title="Заголовок" style={{ height: '600px' }}>
-      <div style={{height: '80%', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', flexWrap: 'wrap'}}>
+    <Card style={{ height: '600px' }}>
+      <div style={{height: '80%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap'}}>
         {data.map((item, index) => (
-          <div key={index} style={{width: '30%', margin: '0 10px 20px'}}>
+          <div key={index} style={{width: '100%', margin: '0 10px 20px'}}>
             <div style={chartStyle(item.value)}>
-              <h3 style = {{fontSize: '16px'}}>{item.subtitle}</h3>
-              <p style = {{fontSize: '20px'}}>{item.value}</p>
+              <h3>{item.subtitle}</h3>
+              <p>{item.value}%</p>
             </div>
           </div>
         ))}
